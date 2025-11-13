@@ -1,0 +1,13 @@
+com\example\club\repository\JugadorRepository.class
+com\example\club\repository\CompeticionRepository.class
+com\example\club\repository\EntrenadorRepository.class
+com\example\club\entity\Jugador.class
+com\example\club\entity\Asociacion.class
+com\example\club\entity\Competicion.class
+com\example\club\entity\Entrenador.class
+com\example\club\controller\ClubController.class
+com\example\club\repository\AsociacionRepository.class
+com\example\club\entity\Club.class
+com\example\club\Application.class
+com\example\club\repository\ClubRepository.class
+com\example\club\DataLoader.class

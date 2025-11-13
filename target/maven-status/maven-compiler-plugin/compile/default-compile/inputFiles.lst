@@ -1,0 +1,13 @@
+C:\spring-jpa-club\src\main\java\com\example\club\Application.java
+C:\spring-jpa-club\src\main\java\com\example\club\controller\ClubController.java
+C:\spring-jpa-club\src\main\java\com\example\club\DataLoader.java
+C:\spring-jpa-club\src\main\java\com\example\club\entity\Asociacion.java
+C:\spring-jpa-club\src\main\java\com\example\club\entity\Club.java
+C:\spring-jpa-club\src\main\java\com\example\club\entity\Competicion.java
+C:\spring-jpa-club\src\main\java\com\example\club\entity\Entrenador.java
+C:\spring-jpa-club\src\main\java\com\example\club\entity\Jugador.java
+C:\spring-jpa-club\src\main\java\com\example\club\repository\AsociacionRepository.java
+C:\spring-jpa-club\src\main\java\com\example\club\repository\ClubRepository.java
+C:\spring-jpa-club\src\main\java\com\example\club\repository\CompeticionRepository.java
+C:\spring-jpa-club\src\main\java\com\example\club\repository\EntrenadorRepository.java
+C:\spring-jpa-club\src\main\java\com\example\club\repository\JugadorRepository.java
