@@ -2,12 +2,12 @@ package com.example.club.controller;
 
 import com.example.club.entity.Club;
 import com.example.club.repository.ClubRepository;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.List;
-
-@RestController
-@RequestMapping("/clubes")
+@Controller
 public class ClubController {
 
     private final ClubRepository clubRepository;
@@ -16,23 +16,16 @@ public class ClubController {
         this.clubRepository = clubRepository;
     }
 
-    @GetMapping
-    public List<Club> listarClubes() {
-        return clubRepository.findAll();
+    @GetMapping({"/","/clubes"})
+    public String index(Model model) {
+        model.addAttribute("clubes", clubRepository.findAll());
+        return "clubes";
     }
 
-    @GetMapping("/{id}")
-    public Club obtenerClub(@PathVariable Long id) {
-        return clubRepository.findById(id).orElse(null);
-    }
-
-    @PostMapping
-    public Club crearClub(@RequestBody Club club) {
-        return clubRepository.save(club);
-    }
-
-    @DeleteMapping("/{id}")
-    public void eliminarClub(@PathVariable Long id) {
-        clubRepository.deleteById(id);
+    @GetMapping("/club/{id}")
+    public String detalleClub(@PathVariable Long id, Model model) {
+        Club club = clubRepository.findById(id).orElse(null);
+        model.addAttribute("club", club);
+        return "detalle_club";
     }
 }

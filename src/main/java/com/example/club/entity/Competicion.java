@@ -18,7 +18,6 @@ public class Competicion {
 
     public Competicion() {}
 
-    // Getters y Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -35,7 +34,5 @@ public class Competicion {
     public void setFechaFin(LocalDate fechaFin) { this.fechaFin = fechaFin; }
 
     @Override
-    public String toString() {
-        return nombre;
-    }
+    public String toString() { return nombre; }
 }

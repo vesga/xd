@@ -15,14 +15,12 @@ public class Jugador {
     private int numero;
     private String posicion;
 
-    // Muchos jugadores pertenecen a un club
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "club_id")
     private Club club;
 
     public Jugador() {}
 
-    // Getters y Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

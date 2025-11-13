@@ -17,7 +17,6 @@ public class Entrenador {
 
     public Entrenador() {}
 
-    // Getters y Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -34,7 +33,5 @@ public class Entrenador {
     public void setNacionalidad(String nacionalidad) { this.nacionalidad = nacionalidad; }
 
     @Override
-    public String toString() {
-        return nombre + " " + apellido;
-    }
+    public String toString() { return nombre + " " + apellido; }
 }

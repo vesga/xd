@@ -6,6 +6,7 @@ com\example\club\entity\Asociacion.class
 com\example\club\entity\Competicion.class
 com\example\club\entity\Entrenador.class
 com\example\club\controller\ClubController.class
+com\example\club\controller\HomeController.class
 com\example\club\repository\AsociacionRepository.class
 com\example\club\entity\Club.class
 com\example\club\Application.class

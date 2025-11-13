@@ -30,14 +30,12 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        // --- ASOCIACIÓN ---
         Asociacion fcf = new Asociacion();
         fcf.setNombre("Federación Colombiana de Fútbol");
         fcf.setPais("Colombia");
         fcf.setPresidente("Ramón Jesurún");
         asociacionRepository.save(fcf);
 
-        // --- COMPETICIONES ---
         Competicion liga = new Competicion();
         liga.setNombre("Liga BetPlay");
         liga.setMontoPremio(5000000);
@@ -52,24 +50,20 @@ public class DataLoader implements CommandLineRunner {
 
         competicionRepository.saveAll(Arrays.asList(liga, copa));
 
-        // --- ENTRENADOR ---
         Entrenador entrenador1 = new Entrenador();
         entrenador1.setNombre("Alberto");
         entrenador1.setApellido("Gamero");
         entrenador1.setEdad(58);
         entrenador1.setNacionalidad("Colombiana");
 
-        // --- CLUB ---
         Club millonarios = new Club();
         millonarios.setNombre("Millonarios FC");
         millonarios.setAsociacion(fcf);
-        millonarios.setEntrenador(entrenador1); // Guardado en cascada (1:1)
+        millonarios.setEntrenador(entrenador1); // will be saved via cascade
         millonarios.setCompeticiones(Arrays.asList(liga, copa));
 
-        // Guardamos el club con todo lo anterior
         clubRepository.save(millonarios);
 
-        // --- JUGADORES (1:N) ---
         Jugador jugador1 = new Jugador();
         jugador1.setNombre("Andrés");
         jugador1.setApellido("Llinás");
@@ -86,7 +80,6 @@ public class DataLoader implements CommandLineRunner {
 
         jugadorRepository.saveAll(List.of(jugador1, jugador2));
 
-        // Actualizamos jugadores en el club (opcional)
         millonarios.setJugadores(List.of(jugador1, jugador2));
         clubRepository.save(millonarios);
 

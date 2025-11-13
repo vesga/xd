@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title th:text="${club.nombre}">Detalles del Club</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container py-4">
+  <h1 th:text="${club.nombre}"></h1>
+  <p><strong>Entrenador:</strong> <span th:text="${club.entrenador != null ? club.entrenador.nombre + ' ' + club.entrenador.apellido : 'N/A'}"></span></p>
+  <p><strong>Asociación:</strong> <span th:text="${club.asociacion != null ? club.asociacion.nombre : 'N/A'}"></span></p>
+  <p><strong>Competiciones:</strong></p>
+  <ul>
+    <li th:each="comp : ${club.competiciones}" th:text="${comp.nombre}"></li>
+  </ul>
+  <p><strong>Jugadores:</strong></p>
+  <ul>
+    <li th:each="jug : ${club.jugadores}" th:text="${jug.nombre + ' ' + jug.apellido + ' - ' + jug.posicion}"></li>
+  </ul>
+  <a href="/" class="btn btn-secondary">Volver</a>
+</div>
+</body>
+</html>
