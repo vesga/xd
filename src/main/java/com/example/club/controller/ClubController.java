@@ -16,7 +16,8 @@ public class ClubController {
         this.clubRepository = clubRepository;
     }
 
-    @GetMapping({"/","/clubes"})
+    // ✅ Ahora solo maneja /clubes
+    @GetMapping("/clubes")
     public String index(Model model) {
         model.addAttribute("clubes", clubRepository.findAll());
         return "clubes";
